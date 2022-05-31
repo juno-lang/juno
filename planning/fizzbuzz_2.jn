@@ -1,0 +1,27 @@
+import io
+
+fn fizzbuzz[] (
+    loop[int i, ..100] => ( // Loop is a python-like generator
+        io:out["${i} : "]
+
+        i {
+            _ % 3: io:out["Fizz"]
+            _ % 5: io:out["Buzz"]
+        }
+
+        io:out["\n"]
+    )
+)
+
+fn worse_fizzbuzz[] (
+    loop[int i, ..100] => (
+        str name = (
+            (i%3 ? "Fizz" : "") +
+            (i%5 ? "Buzz" : "")
+        )
+
+        io:outn["${i} : ${name}"]
+    )
+)
+
+fizzbuzz[]

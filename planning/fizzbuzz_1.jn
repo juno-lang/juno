@@ -1,0 +1,13 @@
+import io
+
+fn fizzbuzz[]:
+    for (int i in 1..100): // A bit iffy about ranges. Gonna return to this
+        io:out["${i} : "]
+
+        i => :
+            _ % 3: io:out["Fizz"]
+            _ % 5: io:out["Buzz"]
+
+        io:out["\n"]
+
+fizzbuzz[]
