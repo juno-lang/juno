@@ -1,0 +1,37 @@
+import io
+import file
+import random
+import loop
+import error
+
+fn fill_array<Type T>[Array<T> input, T fill) ( // Unused
+    over loop:loop(int i, input:count) -> (
+        input#i = fill
+    )
+)
+
+List<str> words = file:read["words.txt"].split("\n")
+
+forever (
+    str word = words#random:irange[words:count]
+    int len  = word:count
+    int left = 8
+
+    str underscores = '_' * len
+
+    io:out["I'm guessing a ${len} length word"]
+
+    while word != underscores (
+        io:out[underscores]
+        char c = (char::io:in["> "] -> {
+            error:*   continue
+            default   break
+        }
+
+        over loop:loop(int i, len) -> (
+            if word#i == c (
+                underscores#i = word#i
+            )
+        )
+    ))
+)
