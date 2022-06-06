@@ -1,0 +1,37 @@
+Types:
+	Structs:   PascalCase
+	Enums:     UPPERCASE
+	Macros:    UPPERCASE
+	Functions: snake_case(x, y)
+	Variables: snake_case
+
+Functions and enums should act like methods:
+   typedef struct {} vector;
+	 void vector_push(...);
+
+   --
+
+   emum {
+		 BYTECODE_ADD,
+		 BYTECODE_SUBTRACT
+	 } BytecodeType;
+
+	 Be concious of the absence of namespaces
+
+Names:
+    Array     : An array of data
+		Type      : An enum
+		Node      : Linking to other nodes
+		Entity    : Networking
+		Handle    : A opaque pointer to an object
+		Func      : A function pointer
+		Internal  : A function in the header but not for use, or not in the header at all
+
+		i, j, k    : Ints
+		f1, f2, f3 : Floats
+		d1, d2, d3 : Doubles
+
+		Words to use:
+		  | count
+			| next :: previous
+			| push :: pop

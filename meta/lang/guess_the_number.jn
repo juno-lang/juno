@@ -1,0 +1,22 @@
+import random
+import io
+
+fn main[] (
+    // int[10,10] board // int is a class, the initializer can be the same as the type. Class[5, 3, "foo"] x is valid
+    // int[10, 10] is shorthand for Array[10, 10].int
+    int.* guess: -1 // Variables automatically initialize. -1 is a sentinal, it can't be the same as answer. This stops you from immediately winning the game. * is mutable.
+    int answer = random:range[100] // random:range is a variadic function, so this is the same as 0, 100
+    int.* attempts
+
+    while guess != answer (
+        attempts ++
+        guess = int::io:input["Enter a guess: "]
+
+        guess <=> answer {
+            LESS: io:out["Try bigger"]
+            MORE: io:out["Try smaller"]
+        }
+    )
+
+    io:out["You won in ${n} tries"]
+)

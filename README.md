@@ -6,7 +6,7 @@ The Juno programming language
 ###### MacOS / Linux
 - Clone the repository: `git clone https://github.com/juno-lang/juno/`
 - `cd` into the cloned directory: `cd juno`
-- Compile and install zest: `make install`
+- Compile and install juno: `make install`
 
 ###### Windows
 - Coming soon (hopefully!)
