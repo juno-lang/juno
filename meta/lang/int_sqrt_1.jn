@@ -1,5 +1,5 @@
 import math
 
 int sqrt_mult[any x, int y] ( // All classes derive from a base class, and all types are classes.
-    <- int::(math:sqrt[x] * y) // Hence, any
+    return int::(math:sqrt[x] * y) // Hence, any
 )

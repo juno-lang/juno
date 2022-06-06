@@ -1,0 +1,19 @@
+import io
+
+int fn bpnt Point[int x, int y] -> (
+    fn exp @op["+", Point p] -> (
+        return Point[(x + p.x), (y + p.y)]
+    )
+
+    fn exp @convert[self ;, str string] -> (
+        return "(${x} ${y})"
+    )
+)
+
+Point p1 = Point[3, 2]
+Point p2 = Point[7, 8]
+
+p1:print_out[]
+p2:print_out[]
+
+io:out(str::(p1 + p2))
